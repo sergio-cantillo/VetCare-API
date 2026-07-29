@@ -2,13 +2,23 @@
 
 ## Descripción
 
-VetCare API es un proyecto desarrollado como parte del Proyecto Final del Diplomado de Programación con .NET.
+VetCare API es una API REST desarrollada con ASP.NET Core que tiene como objetivo facilitar la administración de una clínica veterinaria. El sistema permitirá registrar propietarios, mascotas, veterinarios y citas médicas, ofreciendo una forma organizada de almacenar y consultar la información.
 
-Consiste en una API REST desarrollada con ASP.NET Core que permitirá administrar la información de una clínica veterinaria. El sistema facilitará el registro de propietarios, mascotas, veterinarios y citas médicas, permitiendo realizar operaciones CRUD y gestionar la información de forma organizada.
+Este proyecto será desarrollado como trabajo final del Diplomado de Programación con .NET y busca aplicar los conocimientos adquiridos durante los diferentes módulos, incluyendo programación orientada a objetos, desarrollo de APIs REST, acceso a bases de datos mediante Entity Framework Core, documentación con Swagger e integración con Inteligencia Artificial.
 
 ## Objetivo
 
-Desarrollar una API REST que permita administrar los procesos básicos de una clínica veterinaria mediante el uso de ASP.NET Core, Entity Framework Core y SQLite, aplicando los conocimientos adquiridos durante el diplomado.
+Desarrollar una API REST que permita administrar la información de una clínica veterinaria mediante operaciones CRUD, utilizando ASP.NET Core, Entity Framework Core y SQLite, incorporando además una funcionalidad basada en Inteligencia Artificial para brindar recomendaciones generales sobre el cuidado de las mascotas.
+
+## Problema que busca solucionar
+
+Muchas clínicas veterinarias pequeñas administran la información de sus pacientes mediante agendas físicas o archivos dispersos, lo que dificulta el control de las mascotas, el seguimiento de las citas y la organización de la información.
+
+VetCare API busca ofrecer una solución que permita centralizar estos datos mediante una API REST, facilitando la gestión de propietarios, mascotas, veterinarios y citas médicas de forma organizada y segura.
+
+## Objetivo de Desarrollo Sostenible (ODS)
+
+Este proyecto se relaciona con el **ODS 3 - Salud y Bienestar**, ya que busca mejorar la organización de la atención veterinaria y contribuir al cuidado de la salud de las mascotas mediante el uso de herramientas tecnológicas.
 
 ## Alcance del Proyecto
 
@@ -23,7 +33,7 @@ Las funcionalidades principales serán:
 - Consultar la información registrada.
 - Actualizar los datos existentes.
 - Eliminar registros cuando sea necesario.
-- Gestionar la información mediante operaciones CRUD.
+- Generar recomendaciones generales mediante Inteligencia Artificial.
 
 ## Entidades del Proyecto
 
@@ -105,18 +115,28 @@ Propietario (1)
 | PUT | /api/citas/{id} | Actualizar una cita |
 | DELETE | /api/citas/{id} | Eliminar una cita |
 
+## Integración con Inteligencia Artificial
+
+Como funcionalidad adicional, el proyecto integrará la API de Groq para generar recomendaciones generales relacionadas con el cuidado de las mascotas.
+
+Por ejemplo, el usuario podrá enviar información básica como la especie de la mascota, su edad y algunos síntomas generales, y la IA responderá con recomendaciones orientativas sobre cuidados básicos.
+
+Estas respuestas tendrán únicamente fines informativos y no reemplazarán el diagnóstico realizado por un médico veterinario.
+
 ## Tecnologías
 
-Las herramientas y tecnologías que se utilizarán para el desarrollo del proyecto son:
-
-- ASP.NET Core Web API
-- C#
-- Entity Framework Core
-- SQLite
-- Swagger / OpenAPI
-- Git
-- GitHub
-- Visual Studio Code
+| Tecnología | Versión | Uso |
+|------------|----------|------------------------------|
+| .NET SDK | 8 LTS | Plataforma de desarrollo |
+| C# | 12 | Lenguaje de programación |
+| ASP.NET Core | 8 | Desarrollo de la API |
+| Entity Framework Core | 8 | Acceso a la base de datos |
+| SQLite | - | Base de datos |
+| Groq API | - | Integración de Inteligencia Artificial |
+| Swagger / OpenAPI | - | Documentación y pruebas de la API |
+| Git | - | Control de versiones |
+| GitHub | - | Repositorio del proyecto |
+| Visual Studio Code | - | Editor de código |
 
 ## Organización del Equipo
 
@@ -128,11 +148,29 @@ Las herramientas y tecnologías que se utilizarán para el desarrollo del proyec
 | Santiago Caballero Castro | Desarrollo del módulo de Veterinarios |
 | Isaac Caraballo Villalba | Desarrollo del módulo de Citas, documentación y pruebas |
 
-## Estado del Proyecto
+## Estado Actual
 
 Proyecto en etapa de planeación.
 
-Actualmente se está realizando el diseño de las entidades, relaciones y endpoints de la API como parte de la fase inicial del Proyecto Final del Diplomado de Programación con .NET.
+El proyecto se encuentra actualmente en la etapa de planeación. Se ha definido el alcance, las entidades principales, las relaciones entre ellas, los endpoints de la API y las tecnologías que serán utilizadas durante el desarrollo.
+
+Una vez aprobada la propuesta por el Profesor, se iniciará la implementación del proyecto.
+
+## Arquitectura del Proyecto
+
+La API será desarrollada siguiendo una estructura organizada para facilitar el trabajo en equipo y el mantenimiento del código.
+
+Inicialmente contará con los siguientes módulos:
+
+- Controllers
+- Models
+- DTOs
+- Data
+- Services
+- Repositories
+- Interfaces
+- Mappings
+- AI
 
 ## Integrantes
 
