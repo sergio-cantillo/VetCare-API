@@ -6,7 +6,7 @@ VetCare API es una API REST desarrollada con ASP.NET Core que tiene como objetiv
 
 Este proyecto será desarrollado como trabajo final del Diplomado de Programación con .NET y busca aplicar los conocimientos adquiridos durante los diferentes módulos, incluyendo programación orientada a objetos, desarrollo de APIs REST, acceso a bases de datos mediante Entity Framework Core, documentación con Swagger e integración con Inteligencia Artificial.
 
-## Objetivo
+## Objetivo General
 
 Desarrollar una API REST que permita administrar la información de una clínica veterinaria mediante operaciones CRUD, utilizando ASP.NET Core, Entity Framework Core y SQLite, incorporando además una funcionalidad basada en Inteligencia Artificial para brindar recomendaciones generales sobre el cuidado de las mascotas.
 
