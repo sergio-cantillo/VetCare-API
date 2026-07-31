@@ -2,7 +2,9 @@
 
 ## Descripción
 
-VetCare API es una API REST desarrollada con ASP.NET Core que tiene como objetivo facilitar la administración de una clínica veterinaria. El sistema permitirá registrar propietarios, mascotas, veterinarios y citas médicas, ofreciendo una forma organizada de almacenar y consultar la información.
+VetCare API es una API REST desarrollada con ASP.NET Core que tiene como objetivo facilitar la administración de una clínica veterinaria.
+
+El recurso principal del sistema será la mascota, permitiendo gestionar toda la información relacionada con sus propietarios, veterinarios y citas médicas de forma organizada.
 
 Este proyecto será desarrollado como trabajo final del Diplomado de Programación con .NET y busca aplicar los conocimientos adquiridos durante los diferentes módulos, incluyendo programación orientada a objetos, desarrollo de APIs REST, acceso a bases de datos mediante Entity Framework Core, documentación con Swagger e integración con Inteligencia Artificial.
 
@@ -26,18 +28,20 @@ El sistema permitirá administrar la información de una clínica veterinaria me
 
 Las funcionalidades principales serán:
 
-- Registrar propietarios.
-- Registrar mascotas.
+- Registrar y administrar mascotas como recurso principal.
+- Asociar cada mascota con su propietario.
 - Registrar veterinarios.
-- Programar citas médicas.
+- Programar citas médicas para las mascotas.
 - Consultar la información registrada.
 - Actualizar los datos existentes.
 - Eliminar registros cuando sea necesario.
-- Generar recomendaciones generales mediante Inteligencia Artificial.
+- Generar recomendaciones generales mediante Inteligencia Artificial para las mascotas.
 
 ## Entidades del Proyecto
 
 El sistema estará conformado por las siguientes entidades principales:
+
+El recurso principal del sistema será la **Mascota**, mientras que Propietario, Veterinario y Cita serán entidades relacionadas que apoyarán la administración de la información.
 
 | Entidad | Descripción |
 |----------|-------------|
@@ -75,32 +79,39 @@ Propietario (1)
 
 ## Endpoints Planeados
 
-### Propietarios
+Siguiendo la recomendación del proyecto, la entidad principal de la API será **Mascota**. Los demás módulos (Propietarios, Veterinarios y Citas) funcionarán como recursos relacionados para mantener una estructura sencilla y facilitar el desarrollo del proyecto.
 
-| Método | Endpoint | Descripción |
-|---------|----------|-------------|
-| GET | /api/propietarios | Obtener todos los propietarios |
-| GET | /api/propietarios/{id} | Obtener un propietario por ID |
-| POST | /api/propietarios | Registrar un propietario |
-| PUT | /api/propietarios/{id} | Actualizar un propietario |
-| DELETE | /api/propietarios/{id} | Eliminar un propietario |
-
-### Mascotas
+### Recurso Principal: Mascotas
 
 | Método | Endpoint | Descripción |
 |---------|----------|-------------|
 | GET | /api/mascotas | Obtener todas las mascotas |
 | GET | /api/mascotas/{id} | Obtener una mascota por ID |
-| POST | /api/mascotas | Registrar una mascota |
-| PUT | /api/mascotas/{id} | Actualizar una mascota |
+| POST | /api/mascotas | Registrar una nueva mascota |
+| PUT | /api/mascotas/{id} | Actualizar la información de una mascota |
 | DELETE | /api/mascotas/{id} | Eliminar una mascota |
+| POST | /api/mascotas/{id}/analizar | Generar recomendaciones mediante Inteligencia Artificial |
+
+## Recursos Relacionados
+
+Los siguientes módulos contarán con operaciones CRUD básicas para complementar la administración de las mascotas.
+
+### Propietarios
+
+| Método | Endpoint | Descripción |
+|---------|----------|-------------|
+| GET | /api/propietarios | Obtener propietarios |
+| GET | /api/propietarios/{id} | Obtener un propietario |
+| POST | /api/propietarios | Registrar un propietario |
+| PUT | /api/propietarios/{id} | Actualizar un propietario |
+| DELETE | /api/propietarios/{id} | Eliminar un propietario |
 
 ### Veterinarios
 
 | Método | Endpoint | Descripción |
 |---------|----------|-------------|
-| GET | /api/veterinarios | Obtener todos los veterinarios |
-| GET | /api/veterinarios/{id} | Obtener un veterinario por ID |
+| GET | /api/veterinarios | Obtener veterinarios |
+| GET | /api/veterinarios/{id} | Obtener un veterinario |
 | POST | /api/veterinarios | Registrar un veterinario |
 | PUT | /api/veterinarios/{id} | Actualizar un veterinario |
 | DELETE | /api/veterinarios/{id} | Eliminar un veterinario |
@@ -109,19 +120,26 @@ Propietario (1)
 
 | Método | Endpoint | Descripción |
 |---------|----------|-------------|
-| GET | /api/citas | Obtener todas las citas |
-| GET | /api/citas/{id} | Obtener una cita por ID |
+| GET | /api/citas | Obtener citas |
+| GET | /api/citas/{id} | Obtener una cita |
 | POST | /api/citas | Registrar una cita |
 | PUT | /api/citas/{id} | Actualizar una cita |
 | DELETE | /api/citas/{id} | Eliminar una cita |
 
+
 ## Integración con Inteligencia Artificial
 
-Como funcionalidad adicional, el proyecto integrará la API de Groq para generar recomendaciones generales relacionadas con el cuidado de las mascotas.
+Como funcionalidad adicional, el proyecto integrará la API de Groq para analizar la información básica de una mascota.
 
-Por ejemplo, el usuario podrá enviar información básica como la especie de la mascota, su edad y algunos síntomas generales, y la IA responderá con recomendaciones orientativas sobre cuidados básicos.
+El usuario podrá enviar datos como la especie, edad y síntomas generales. La Inteligencia Artificial generará recomendaciones orientativas sobre cuidados básicos, posibles causas y sugerencias para acudir a un médico veterinario cuando sea necesario.
 
-Estas respuestas tendrán únicamente fines informativos y no reemplazarán el diagnóstico realizado por un médico veterinario.
+Estas respuestas tendrán únicamente fines informativos y no reemplazarán el diagnóstico realizado por un profesional.
+
+## Recurso Principal
+
+La entidad principal del proyecto será **Mascota**.
+
+Las entidades Propietario, Veterinario y Cita servirán como apoyo para organizar la información relacionada con cada mascota y facilitar la administración de la clínica veterinaria.
 
 ## Tecnologías
 
@@ -140,25 +158,25 @@ Estas respuestas tendrán únicamente fines informativos y no reemplazarán el d
 
 ## Organización del Equipo
 
-| Integrante | Responsabilidad |
-|------------|-----------------|
-| Sergio Cantillo Rivas | Configuración del proyecto, GitHub y base de datos |
-| Abdías Martínez De Arco | Desarrollo del módulo de Propietarios |
-| Ronnie De La Hoz Fontalvo | Desarrollo del módulo de Mascotas |
-| Santiago Caballero Castro | Desarrollo del módulo de Veterinarios |
-| Isaac Caraballo Villalba | Desarrollo del módulo de Citas, documentación y pruebas |
+| Integrante | Rol | Responsabilidad |
+|------------|-----|-----------------|
+| Sergio Cantillo Rivas | Backend / Team Leader | Arquitectura del proyecto, configuración inicial, GitHub, base de datos y coordinación del equipo. |
+| Abdías Martínez De Arco | API / IA | Integración con Groq API, HttpClient y recomendaciones mediante Inteligencia Artificial. |
+| Ronnie De La Hoz Fontalvo | BD / DTOs | Diseño de modelos, DTOs, validaciones, relaciones y consultas. |
+| Santiago Caballero Castro | Backend | Desarrollo de controladores y operaciones CRUD de la API. |
+| Isaac Caraballo Villalba | Docs / QA | Documentación, Swagger, pruebas, capturas y validación del proyecto. |
 
 ## Estado Actual
 
-Proyecto en etapa de planeación.
+El proyecto se encuentra en la etapa de planeación.
 
-El proyecto se encuentra actualmente en la etapa de planeación. Se ha definido el alcance, las entidades principales, las relaciones entre ellas, los endpoints de la API y las tecnologías que serán utilizadas durante el desarrollo.
+Hasta el momento se ha definido el problema que se desea resolver, el objetivo general, el alcance del proyecto, las entidades, las relaciones entre ellas, los endpoints principales, la integración con Inteligencia Artificial, las tecnologías que se utilizarán y la distribución inicial del trabajo del equipo.
 
-Una vez aprobada la propuesta por el Profesor, se iniciará la implementación del proyecto.
+Una vez el proyecto sea aprobado por el profesor, se iniciará la fase de implementación.
 
 ## Arquitectura del Proyecto
 
-La API será desarrollada siguiendo una estructura organizada para facilitar el trabajo en equipo y el mantenimiento del código.
+La API seguirá una arquitectura por capas para facilitar el mantenimiento del código y el trabajo colaborativo entre los integrantes del equipo.
 
 Inicialmente contará con los siguientes módulos:
 
