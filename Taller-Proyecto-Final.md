@@ -30,7 +30,7 @@ El proyecto se relaciona con el **ODS 3 - Salud y Bienestar**, porque busca mejo
 
 ---
 
-### Producto esperado (Máximo 150 palabras)
+### Producto esperado
 
 VetCare API es una API REST que busca mejorar la administración de una clínica veterinaria. El sistema tendrá como recurso principal a la mascota, permitiendo almacenar su información y relacionarla con su propietario, el veterinario encargado y las citas médicas. Además, incorporará una funcionalidad de Inteligencia Artificial para generar recomendaciones generales sobre el cuidado de la mascota a partir de algunos datos registrados. De esta manera se busca facilitar la organización de la información, mejorar el seguimiento de los pacientes y apoyar el trabajo diario de las clínicas veterinarias. El proyecto está relacionado con el **ODS 3 - Salud y Bienestar**, ya que promueve el uso de la tecnología para contribuir al cuidado de la salud animal.
 
