@@ -17,3 +17,14 @@ obj/
 
 # Logs
 *.log
+
+# Base de datos SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Configuración local
+appsettings.Development.json
+
+# Archivos de configuración con credenciales
+appsettings.Local.json

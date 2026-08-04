@@ -1,199 +1,408 @@
+<!-- Badges -->
+<p align="center">
+
+<a href="https://dotnet.microsoft.com/" target="_blank">
+    <img src="https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET 8"/>
+</a>
+
+<a href="https://dotnet.microsoft.com/apps/aspnet" target="_blank">
+    <img src="https://img.shields.io/badge/ASP.NET-Core-5C2D91?style=for-the-badge&logo=dotnet&logoColor=white" alt="ASP.NET Core"/>
+</a>
+
+<a href="https://learn.microsoft.com/ef/core/" target="_blank">
+    <img src="https://img.shields.io/badge/Entity%20Framework%20Core-512BD4?style=for-the-badge&logo=.net&logoColor=white" alt="Entity Framework Core"/>
+</a>
+
+<a href="https://www.sqlite.org/" target="_blank">
+    <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/>
+</a>
+
+<a href="https://groq.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Groq-AI-FF6B35?style=for-the-badge" alt="Groq AI"/>
+</a>
+
+<a href="https://opensource.org/license/mit" target="_blank">
+    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License"/>
+</a>
+
+</p>
+
+```text
+██╗   ██╗███████╗████████╗ ██████╗ █████╗ ██████╗ ███████╗
+██║   ██║██╔════╝╚══██╔══╝██╔════╝██╔══██╗██╔══██╗██╔════╝
+██║   ██║█████╗     ██║   ██║     ███████║██████╔╝█████╗
+╚██╗ ██╔╝██╔══╝     ██║   ██║     ██╔══██║██╔══██╗██╔══╝
+ ╚████╔╝ ███████╗   ██║   ╚██████╗██║  ██║██║  ██║███████╗
+  ╚═══╝  ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+
+              Veterinary Management REST API
+```
+
 # VetCare API
+### Sistema de Gestión Veterinaria
+
+Sistema de gestión veterinaria desarrollado con **ASP.NET Core 8 Web API**, **Entity Framework Core** y **SQLite**, orientado a la administración de propietarios, mascotas, veterinarios y citas médicas mediante una arquitectura REST.
+
+Además, integra **Groq AI** para generar recomendaciones veterinarias generales a partir de los síntomas registrados de una mascota.
+
+---
+
+
+## Tabla de contenido
+
+- [Descripción](#descripción)
+- [Características principales](#características-principales)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Requisitos del sistema](#requisitos-del-sistema)
+- [Instalación](#instalación)
+- [Configuración del proyecto](#configuración-del-proyecto)
+- [Endpoints disponibles](#endpoints-disponibles)
+- [Integración con Inteligencia Artificial](#integración-con-inteligencia-artificial)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Ejemplos de uso](#ejemplos-de-uso)
+- [Capturas de pantalla](#capturas-de-pantalla)
+- [Autores](#autores)
+- [Licencia](#licencia)
+
+---
 
 ## Descripción
 
-VetCare API es una API REST desarrollada con ASP.NET Core que tiene como objetivo facilitar la administración de una clínica veterinaria.
+**VetCare API** fue desarrollada como proyecto final del **Diplomado de Programación con .NET**.
 
-El recurso principal del sistema será la mascota, permitiendo gestionar toda la información relacionada con sus propietarios, veterinarios y citas médicas de forma organizada.
+Su objetivo es aplicar los conocimientos adquiridos en el desarrollo de una API REST, implementando operaciones CRUD, persistencia de datos con Entity Framework Core y SQLite, documentación con Swagger e integración de Inteligencia Artificial mediante Groq.
 
-Este proyecto será desarrollado como trabajo final del Diplomado de Programación con .NET y busca aplicar los conocimientos adquiridos durante los diferentes módulos, incluyendo programación orientada a objetos, desarrollo de APIs REST, acceso a bases de datos mediante Entity Framework Core, documentación con Swagger e integración con Inteligencia Artificial.
+---
 
-## Objetivo General
+## Características principales
 
-Desarrollar una API REST que permita administrar la información de una clínica veterinaria mediante operaciones CRUD, utilizando ASP.NET Core, Entity Framework Core y SQLite, incorporando además una funcionalidad basada en Inteligencia Artificial para brindar recomendaciones generales sobre el cuidado de las mascotas.
+- API REST desarrollada con ASP.NET Core 8.
+- Persistencia de datos utilizando Entity Framework Core y SQLite.
+- Operaciones CRUD para todas las entidades.
+- Arquitectura organizada mediante Controllers, Models, DTOs y Data.
+- Validaciones utilizando Data Annotations.
+- Documentación interactiva mediante Swagger.
+- Integración con Groq AI para generar recomendaciones veterinarias.
+- Respuestas HTTP con mensajes claros y códigos de estado apropiados.
 
-## Problema que busca solucionar
+---
 
-Muchas clínicas veterinarias pequeñas administran la información de sus pacientes mediante agendas físicas o archivos dispersos, lo que dificulta el control de las mascotas, el seguimiento de las citas y la organización de la información.
+## Tecnologías utilizadas
 
-VetCare API busca ofrecer una solución que permita centralizar estos datos mediante una API REST, facilitando la gestión de propietarios, mascotas, veterinarios y citas médicas de forma organizada y segura.
+| Tecnología | Descripción |
+|------------|-------------|
+| ASP.NET Core 8 | Framework para el desarrollo de la API REST. |
+| C# | Lenguaje de programación utilizado en el proyecto. |
+| Entity Framework Core | ORM para el acceso y manipulación de la base de datos. |
+| SQLite | Motor de base de datos ligero utilizado por la aplicación. |
+| Swagger / OpenAPI | Documentación y pruebas de los endpoints. |
+| Groq AI | Servicio de Inteligencia Artificial para generar recomendaciones veterinarias. |
+| Visual Studio Code | Entorno de desarrollo utilizado. |
+| Git y GitHub | Control de versiones y alojamiento del repositorio. |
 
-## Objetivo de Desarrollo Sostenible (ODS)
+---
 
-Este proyecto se relaciona con el **ODS 3 - Salud y Bienestar**, ya que busca mejorar la organización de la atención veterinaria y contribuir al cuidado de la salud de las mascotas mediante el uso de herramientas tecnológicas.
+## Requisitos del sistema
 
-## Alcance del Proyecto
+Antes de ejecutar el proyecto es necesario tener instalado:
 
-El sistema permitirá administrar la información de una clínica veterinaria mediante una API REST.
+- .NET SDK 8.0 o superior.
+- Git.
+- Visual Studio Code o Visual Studio 2022.
+- SQLite (opcional, para consultar la base de datos).
+- Una API Key de Groq para utilizar el servicio de Inteligencia Artificial.
 
-Las funcionalidades principales serán:
+---
 
-- Registrar y administrar mascotas como recurso principal.
-- Asociar cada mascota con su propietario.
-- Registrar veterinarios.
-- Programar citas médicas para las mascotas.
-- Consultar la información registrada.
-- Actualizar los datos existentes.
-- Eliminar registros cuando sea necesario.
-- Generar recomendaciones generales mediante Inteligencia Artificial para las mascotas.
+## Instalación
 
-## Entidades del Proyecto
+### 1. Clonar el repositorio
 
-El sistema estará conformado por las siguientes entidades principales:
-
-El recurso principal del sistema será la **Mascota**, mientras que Propietario, Veterinario y Cita serán entidades relacionadas que apoyarán la administración de la información.
-
-| Entidad | Descripción |
-|----------|-------------|
-| Propietario | Persona responsable de una o varias mascotas registradas en la clínica. |
-| Mascota | Animal que recibe atención médica en la clínica veterinaria. |
-| Veterinario | Profesional encargado de atender las consultas y procedimientos médicos. |
-| Cita | Registro de una consulta médica programada para una mascota con un veterinario. |
-
-## Relaciones entre las Entidades
-
-Las relaciones del sistema serán las siguientes:
-
-- Un propietario puede tener una o varias mascotas.
-- Una mascota pertenece a un solo propietario.
-- Un veterinario puede atender muchas citas.
-- Una mascota puede tener muchas citas.
-- Cada cita corresponde a una única mascota y a un único veterinario.
-
-### Representación de las relaciones
-
-```text
-Propietario (1)
-      │
-      └─────────────── (N) Mascota
-                             │
-                             │ (1)
-                             │
-                             └─────────────── (N) Cita
-                                                ▲
-                                                │
-                                                │ (N)
-                                                │
-                                         Veterinario (1)
+```bash
+git clone https://github.com/sergio-cantillo/VetCare-API.git
 ```
 
-## Endpoints Planeados
+### 2. Entrar al proyecto
 
-Siguiendo la recomendación del proyecto, la entidad principal de la API será **Mascota**. Los demás módulos (Propietarios, Veterinarios y Citas) funcionarán como recursos relacionados para mantener una estructura sencilla y facilitar el desarrollo del proyecto.
+```bash
+cd VetCare-API
+```
 
-### Recurso Principal: Mascotas
+### 3. Restaurar las dependencias
 
-| Método | Endpoint | Descripción |
-|---------|----------|-------------|
-| GET | /api/mascotas | Obtener todas las mascotas |
-| GET | /api/mascotas/{id} | Obtener una mascota por ID |
-| POST | /api/mascotas | Registrar una nueva mascota |
-| PUT | /api/mascotas/{id} | Actualizar la información de una mascota |
-| DELETE | /api/mascotas/{id} | Eliminar una mascota |
-| POST | /api/mascotas/{id}/analizar | Generar recomendaciones mediante Inteligencia Artificial |
+```bash
+dotnet restore
+```
 
-## Recursos Relacionados
+### 4. Ejecutar las migraciones
 
-Los siguientes módulos contarán con operaciones CRUD básicas para complementar la administración de las mascotas.
+```bash
+dotnet ef database update --project VetCare.Api
+```
+
+### 5. Ejecutar la aplicación
+
+```bash
+dotnet run --project VetCare.Api
+```
+
+### 6. Abrir Swagger
+
+Una vez iniciada la aplicación, abre en el navegador la dirección que aparece en la consola, por ejemplo:
+
+```text
+https://localhost:7000/swagger
+```
+
+> **Nota:** El puerto puede variar según la configuración del entorno de desarrollo.
+
+---
+
+## Configuración del proyecto
+
+Antes de ejecutar la aplicación es necesario configurar los siguientes elementos:
+
+### Base de datos
+
+La API utiliza **SQLite** como motor de base de datos.
+
+La cadena de conexión se encuentra en:
+
+```text
+VetCare.Api/appsettings.json
+```
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Data Source=VetCare.db"
+}
+```
+
+---
+
+### Clave de Groq AI
+
+Para utilizar el análisis inteligente de mascotas se debe registrar una API Key de Groq.
+
+Dentro de `appsettings.json`:
+
+```json
+"Groq": {
+  "ApiKey": "TU_API_KEY"
+}
+
+```
+
+---
+
+## Endpoints disponibles
 
 ### Propietarios
 
 | Método | Endpoint | Descripción |
 |---------|----------|-------------|
-| GET | /api/propietarios | Obtener propietarios |
-| GET | /api/propietarios/{id} | Obtener un propietario |
-| POST | /api/propietarios | Registrar un propietario |
-| PUT | /api/propietarios/{id} | Actualizar un propietario |
-| DELETE | /api/propietarios/{id} | Eliminar un propietario |
+| GET | `/api/Propietarios` | Listar propietarios |
+| GET | `/api/Propietarios/{id}` | Buscar propietario |
+| POST | `/api/Propietarios` | Registrar propietario |
+| PUT | `/api/Propietarios/{id}` | Actualizar propietario |
+| DELETE | `/api/Propietarios/{id}` | Eliminar propietario |
+
+### Mascotas
+
+| Método | Endpoint | Descripción |
+|---------|----------|-------------|
+| GET | `/api/Mascotas` | Listar mascotas |
+| GET | `/api/Mascotas/{id}` | Buscar mascota |
+| POST | `/api/Mascotas` | Registrar mascota |
+| PUT | `/api/Mascotas/{id}` | Actualizar mascota |
+| DELETE | `/api/Mascotas/{id}` | Eliminar mascota |
+| POST | `/api/Mascotas/{id}/analizar` | Obtener recomendación con IA |
 
 ### Veterinarios
 
 | Método | Endpoint | Descripción |
 |---------|----------|-------------|
-| GET | /api/veterinarios | Obtener veterinarios |
-| GET | /api/veterinarios/{id} | Obtener un veterinario |
-| POST | /api/veterinarios | Registrar un veterinario |
-| PUT | /api/veterinarios/{id} | Actualizar un veterinario |
-| DELETE | /api/veterinarios/{id} | Eliminar un veterinario |
+| GET | `/api/Veterinarios` | Listar veterinarios |
+| GET | `/api/Veterinarios/{id}` | Buscar veterinario |
+| POST | `/api/Veterinarios` | Registrar veterinario |
+| PUT | `/api/Veterinarios/{id}` | Actualizar veterinario |
+| DELETE | `/api/Veterinarios/{id}` | Eliminar veterinario |
 
 ### Citas
 
 | Método | Endpoint | Descripción |
 |---------|----------|-------------|
-| GET | /api/citas | Obtener citas |
-| GET | /api/citas/{id} | Obtener una cita |
-| POST | /api/citas | Registrar una cita |
-| PUT | /api/citas/{id} | Actualizar una cita |
-| DELETE | /api/citas/{id} | Eliminar una cita |
+| GET | `/api/Citas` | Listar citas |
+| GET | `/api/Citas/{id}` | Buscar cita |
+| POST | `/api/Citas` | Registrar cita |
+| PUT | `/api/Citas/{id}` | Actualizar cita |
+| DELETE | `/api/Citas/{id}` | Eliminar cita |
 
+---
 
 ## Integración con Inteligencia Artificial
 
-Como funcionalidad adicional, el proyecto integrará la API de Groq para analizar la información básica de una mascota.
+Una de las principales funcionalidades de **VetCare API** es la integración con **Groq AI**, la cual permite analizar la información registrada de una mascota para generar recomendaciones veterinarias generales.
 
-El usuario podrá enviar datos como la especie, edad y síntomas generales. La Inteligencia Artificial generará recomendaciones orientativas sobre cuidados básicos, posibles causas y sugerencias para acudir a un médico veterinario cuando sea necesario.
+La IA utiliza información como:
 
-Estas respuestas tendrán únicamente fines informativos y no reemplazarán el diagnóstico realizado por un profesional.
+- Nombre
+- Especie
+- Raza
+- Edad
+- Peso
+- Síntomas
 
-## Recurso Principal
+Con estos datos genera una respuesta orientativa, aclarando que **no reemplaza el diagnóstico realizado por un médico veterinario**.
 
-La entidad principal del proyecto será **Mascota**.
+### Endpoint
 
-Las entidades Propietario, Veterinario y Cita servirán como apoyo para organizar la información relacionada con cada mascota y facilitar la administración de la clínica veterinaria.
+```
+POST /api/Mascotas/{id}/analizar
+```
 
-## Tecnologías
+La respuesta incluye recomendaciones generales basadas en los síntomas registrados para la mascota seleccionada.
 
-| Tecnología | Versión | Uso |
-|------------|----------|------------------------------|
-| .NET SDK | 8 LTS | Plataforma de desarrollo |
-| C# | 12 | Lenguaje de programación |
-| ASP.NET Core | 8 | Desarrollo de la API |
-| Entity Framework Core | 8 | Acceso a la base de datos |
-| SQLite | - | Base de datos |
-| Groq API | - | Integración de Inteligencia Artificial |
-| Swagger / OpenAPI | - | Documentación y pruebas de la API |
-| Git | - | Control de versiones |
-| GitHub | - | Repositorio del proyecto |
-| Visual Studio Code | - | Editor de código |
+---
 
-## Organización del Equipo
+## Estructura del proyecto
 
-| Integrante | Rol | Responsabilidad |
-|------------|-----|-----------------|
-| Sergio Cantillo Rivas | Backend / Team Leader | Arquitectura del proyecto, configuración inicial, GitHub, base de datos y coordinación del equipo. |
-| Abdías Martínez De Arco | API / IA | Integración con Groq API, HttpClient y recomendaciones mediante Inteligencia Artificial. |
-| Ronnie De La Hoz Fontalvo | BD / DTOs | Diseño de modelos, DTOs, validaciones, relaciones y consultas. |
-| Santiago Caballero Castro | Backend | Desarrollo de controladores y operaciones CRUD de la API. |
-| Isaac Caraballo Villalba | Docs / QA | Documentación, Swagger, pruebas, capturas y validación del proyecto. |
+```text
+VetCare-API
+│
+├── assets                              # Capturas utilizadas en el README
+│ 
+├── VetCare.Api
+│   ├── AI
+│   │   └── GroqService.cs              # Servicio de integración con Groq AI
+│   │
+│   ├── Controllers
+│   │   ├── CitasController.cs          # CRUD de citas
+│   │   ├── MascotasController.cs       # CRUD de mascotas y análisis con IA
+│   │   ├── PropietariosController.cs   # CRUD de propietarios
+│   │   └── VeterinariosController.cs   # CRUD de veterinarios
+│   │
+│   ├── Data
+│   │   └── VetCareDbContext.cs         # Contexto de Entity Framework Core
+│   │
+│   ├── DTOs
+│   │   ├── CitaCrearDto.cs             # DTO para crear citas
+│   │   ├── CitaRespuestaDto.cs         # DTO de respuesta de citas
+│   │   ├── MascotaActualizarDto.cs     # DTO para actualizar mascotas
+│   │   ├── MascotaCrearDto.cs          # DTO para crear mascotas
+│   │   ├── MascotaRespuestaDto.cs      # DTO de respuesta de mascotas
+│   │   ├── PropietarioCrearDto.cs      # DTO para crear propietarios
+│   │   ├── PropietarioRespuestaDto.cs  # DTO de respuesta de propietarios
+│   │   ├── VeterinarioCrearDto.cs      # DTO para crear veterinarios
+│   │   └── VeterinarioRespuestaDto.cs  # DTO de respuesta de veterinarios
+│   │
+│   ├── Migrations                     # Migraciones de Entity Framework Core
+│   │
+│   ├── Models
+│   │   ├── Cita.cs                    # Modelo de citas
+│   │   ├── Mascota.cs                 # Modelo de mascotas
+│   │   ├── Propietario.cs             # Modelo de propietarios
+│   │   └── Veterinario.cs             # Modelo de veterinarios
+│   │
+│   ├── appsettings.json              # Configuración de la aplicación
+│   ├── Program.cs                    # Configuración principal de la API
+│   └── VetCare.Api.csproj            # Proyecto ASP.NET Core
+│
+├── README.md                         # Documentación del proyecto
+├── Taller-Proyecto-Final.md          # Documento del proyecto
+├── global.json                       # SDK de .NET utilizado
+├── .gitignore                        # Archivos ignorados por Git
+└── VetCare.sln                       # Solución de Visual Studio
+```
 
-## Estado Actual
+---
 
-El proyecto se encuentra en la etapa de planeación.
+## Ejemplos de uso
 
-Hasta el momento se ha definido el problema que se desea resolver, el objetivo general, el alcance del proyecto, las entidades, las relaciones entre ellas, los endpoints principales, la integración con Inteligencia Artificial, las tecnologías que se utilizarán y la distribución inicial del trabajo del equipo.
+Durante las pruebas realizadas mediante Swagger se verificó el correcto funcionamiento de los principales endpoints de la API:
 
-Una vez el proyecto sea aprobado por el profesor, se iniciará la fase de implementación.
+- Registro de propietarios.
+- Registro de mascotas asociadas a un propietario.
+- Registro de veterinarios.
+- Registro de citas médicas.
+- Consulta de registros individuales y listados completos.
+- Actualización de la información registrada.
+- Eliminación de registros.
+- Generación de recomendaciones veterinarias mediante Inteligencia Artificial (Groq).
 
-## Arquitectura del Proyecto
+---
 
-La API seguirá una arquitectura por capas para facilitar el mantenimiento del código y el trabajo colaborativo entre los integrantes del equipo.
+## Capturas de pantalla
 
-Inicialmente contará con los siguientes módulos:
+A continuación se presentan algunas evidencias del funcionamiento del sistema.
 
-- Controllers
-- Models
-- DTOs
-- Data
-- Services
-- Repositories
-- Interfaces
-- Mappings
-- AI
+### Swagger
 
-## Integrantes
+![Swagger](assets/images/swagger-home.png)
+![Swagger](assets/images/swagger-home2.png)
 
-- Sergio Cantillo Rivas
+---
+
+### Registro de propietario
+
+![POST propietario](assets/images/post-propietario.png)
+
+---
+
+### Registro de mascota
+
+![POST mascota](assets/images/post-mascota.png)
+
+---
+
+### Registro de veterinario
+
+![POST veterinario](assets/images/post-veterinario.png)
+
+---
+
+### Registro de cita
+
+![POST cita](assets/images/post-cita.png)
+
+---
+
+### Consultar mascotas
+
+![GET mascotas](assets/images/get-mascotas.png)
+
+---
+
+### Actualizar mascota
+
+![PUT mascota](assets/images/put-mascota.png)
+
+---
+
+### Eliminar mascota
+
+![DELETE mascota](assets/images/delete-mascota.png)
+
+---
+
+### Análisis con IA
+
+![Groq](assets/images/groq-analysis.png)
+
+---
+
+## Autores
+
+- Sergio Andrés Cantillo Rivas
 - Abdías Martínez De Arco
 - Ronnie De La Hoz Fontalvo
 - Santiago Caballero Castro
 - Isaac Caraballo Villalba
+
+---
+
+## Licencia
+
+Este proyecto se distribuye bajo la licencia **MIT**.
+
+Fue desarrollado con fines académicos como parte del **Diplomado de Programación con .NET**.
