@@ -9,7 +9,8 @@ builder.Services.AddControllers();
 
 // Configurar Entity Framework con SQLite
 builder.Services.AddDbContext<VetCareDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddHttpClient<GroqService>();
 // Swagger
